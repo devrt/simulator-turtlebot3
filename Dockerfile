@@ -7,8 +7,9 @@ SHELL ["/bin/bash", "-c"]
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-    apt-get install -y curl python-pip && \
-    pip install -U supervisor supervisor_twiddler && \
+    apt-get install -y curl git python-pip && \
+    pip install -U supervisor supervisor_twiddler rosdep && \
+    rosdep init && \
     apt-get clean
 
 # OSRF distribution is better for gazebo
