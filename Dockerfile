@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get install -y curl git python-pip && \
-    pip install -U supervisor supervisor_twiddler rosdep && \
+    pip install -U --no-cache-dir supervisor supervisor_twiddler rosdep && \
     rosdep init && \
     apt-get clean
 
